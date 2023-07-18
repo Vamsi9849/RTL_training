@@ -1,0 +1,33 @@
+$date
+	Mon Jul 17 23:24:26 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test $end
+$var wire 1 ! even_PG $end
+$var reg 8 " a [7:0] $end
+$scope module dut $end
+$var wire 8 # a [7:0] $end
+$var wire 1 ! even_PG $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1110 #
+b1110 "
+1!
+$end
+#5
+0!
+b110011 "
+b110011 #
+#10
+1!
+b1010100 "
+b1010100 #
+#15

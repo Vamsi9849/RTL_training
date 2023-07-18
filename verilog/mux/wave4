@@ -1,0 +1,83 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55bc40da93e0 .scope module, "test" "test" 2 1;
+ .timescale 0 0;
+v0x55bc40dd0bb0_0 .var "in", 3 0;
+v0x55bc40dd0ca0_0 .var "s", 1 0;
+v0x55bc40dd0d70_0 .net "y", 0 0, L_0x55bc40dd1650;  1 drivers
+S_0x55bc40db97e0 .scope module, "uut" "mux4" 2 5, 3 8 0, S_0x55bc40da93e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "in"
+    .port_info 1 /INPUT 2 "s"
+    .port_info 2 /OUTPUT 1 "y"
+v0x55bc40dd0810_0 .net "in", 3 0, v0x55bc40dd0bb0_0;  1 drivers
+v0x55bc40dd08f0_0 .net "s", 1 0, v0x55bc40dd0ca0_0;  1 drivers
+v0x55bc40dd09d0_0 .net "t", 1 0, L_0x55bc40dd14c0;  1 drivers
+v0x55bc40dd0aa0_0 .net "y", 0 0, L_0x55bc40dd1650;  alias, 1 drivers
+L_0x55bc40dd0f90 .part v0x55bc40dd0bb0_0, 0, 2;
+L_0x55bc40dd10d0 .part v0x55bc40dd0ca0_0, 0, 1;
+L_0x55bc40dd12b0 .part v0x55bc40dd0bb0_0, 2, 2;
+L_0x55bc40dd13a0 .part v0x55bc40dd0ca0_0, 0, 1;
+L_0x55bc40dd14c0 .concat8 [ 1 1 0 0], L_0x55bc40dd0e90, L_0x55bc40dd1210;
+L_0x55bc40dd16f0 .part v0x55bc40dd0ca0_0, 1, 1;
+S_0x55bc40db9a00 .scope module, "m1" "mux2" 3 13, 3 1 0, S_0x55bc40db97e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in"
+    .port_info 1 /INPUT 1 "s"
+    .port_info 2 /OUTPUT 1 "y"
+v0x55bc40d98890_0 .net "in", 1 0, L_0x55bc40dd0f90;  1 drivers
+v0x55bc40dcfc50_0 .net "s", 0 0, L_0x55bc40dd10d0;  1 drivers
+v0x55bc40dcfd10_0 .net "y", 0 0, L_0x55bc40dd0e90;  1 drivers
+L_0x55bc40dd0e90 .part/v L_0x55bc40dd0f90, L_0x55bc40dd10d0, 1;
+S_0x55bc40dcfe30 .scope module, "m2" "mux2" 3 14, 3 1 0, S_0x55bc40db97e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in"
+    .port_info 1 /INPUT 1 "s"
+    .port_info 2 /OUTPUT 1 "y"
+v0x55bc40dd0050_0 .net "in", 1 0, L_0x55bc40dd12b0;  1 drivers
+v0x55bc40dd0150_0 .net "s", 0 0, L_0x55bc40dd13a0;  1 drivers
+v0x55bc40dd0210_0 .net "y", 0 0, L_0x55bc40dd1210;  1 drivers
+L_0x55bc40dd1210 .part/v L_0x55bc40dd12b0, L_0x55bc40dd13a0, 1;
+S_0x55bc40dd0330 .scope module, "m3" "mux2" 3 15, 3 1 0, S_0x55bc40db97e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in"
+    .port_info 1 /INPUT 1 "s"
+    .port_info 2 /OUTPUT 1 "y"
+v0x55bc40dd0550_0 .net "in", 1 0, L_0x55bc40dd14c0;  alias, 1 drivers
+v0x55bc40dd0630_0 .net "s", 0 0, L_0x55bc40dd16f0;  1 drivers
+v0x55bc40dd06f0_0 .net "y", 0 0, L_0x55bc40dd1650;  alias, 1 drivers
+L_0x55bc40dd1650 .part/v L_0x55bc40dd14c0, L_0x55bc40dd16f0, 1;
+    .scope S_0x55bc40da93e0;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "wave4.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55bc40da93e0 {0 0 0};
+    %vpi_call 2 10 "$monitor", $time, "in=%b,s=%b,y=%b", v0x55bc40dd0bb0_0, v0x55bc40dd0ca0_0, v0x55bc40dd0d70_0 {0 0 0};
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0x55bc40dd0bb0_0, 0, 4;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x55bc40dd0ca0_0, 0, 2;
+    %delay 5, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x55bc40dd0ca0_0, 0, 2;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x55bc40dd0ca0_0, 0, 2;
+    %delay 3, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x55bc40dd0ca0_0, 0, 2;
+    %delay 2, 0;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "4to1_tb.v";
+    "4to1.v";

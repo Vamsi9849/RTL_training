@@ -1,0 +1,62 @@
+$date
+	Fri Jul 14 13:50:11 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test $end
+$var wire 1 ! zero $end
+$var wire 16 " z [15:0] $end
+$var wire 1 # sign $end
+$var wire 1 $ par $end
+$var wire 1 % over $end
+$var wire 1 & carry $end
+$var reg 16 ' x [15:0] $end
+$var reg 16 ( y [15:0] $end
+$scope module uut $end
+$var wire 1 % over $end
+$var wire 16 ) x [15:0] $end
+$var wire 16 * y [15:0] $end
+$var wire 1 ! zero $end
+$var wire 16 + z [15:0] $end
+$var wire 1 # sign $end
+$var wire 1 $ par $end
+$var wire 1 & carry $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b111111111111 +
+b1000000000000000 *
+b1000111111111111 )
+b1000000000000000 (
+b1000111111111111 '
+1&
+1%
+1$
+0#
+b111111111111 "
+0!
+$end
+#5
+0%
+1#
+b1001100010110000 "
+b1001100010110000 +
+b1001100011001011 (
+b1001100011001011 *
+b1111111111100101 '
+b1111111111100101 )
+#10
+0&
+b1111111111111111 "
+b1111111111111111 +
+b101010101010101 (
+b101010101010101 *
+b1010101010101010 '
+b1010101010101010 )
+#20

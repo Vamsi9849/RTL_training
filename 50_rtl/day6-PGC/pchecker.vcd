@@ -1,0 +1,38 @@
+$date
+	Mon Jul 17 23:33:55 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test $end
+$var wire 1 ! error $end
+$var reg 8 " a [7:0] $end
+$var reg 1 # parity_in $end
+$scope module dut $end
+$var wire 8 $ a [7:0] $end
+$var wire 1 # parity_in $end
+$var wire 1 ! error $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1110 $
+1#
+b1110 "
+0!
+$end
+#5
+0#
+0!
+b110011 "
+b110011 $
+#10
+1#
+0!
+b1010100 "
+b1010100 $
+#15
